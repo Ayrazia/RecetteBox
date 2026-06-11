@@ -1,35 +1,57 @@
 import { Tabs } from 'expo-router';
 import React from 'react';
-
+import { Ionicons } from '@expo/vector-icons';
 import { HapticTab } from '@/components/haptic-tab';
-import { IconSymbol } from '@/components/ui/icon-symbol';
-import { Colors } from '@/constants/theme';
-import { useColorScheme } from '@/hooks/use-color-scheme';
+import { retro, serif } from '@/constants/retro';
 
 export default function TabLayout() {
-  const colorScheme = useColorScheme();
-
-  return (
-    <Tabs
-      screenOptions={{
-        tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
-        headerShown: false,
-        tabBarButton: HapticTab,
-      }}>
-      <Tabs.Screen
-        name="index"
-        options={{
-          title: 'Home',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="house.fill" color={color} />,
-        }}
-      />
-      <Tabs.Screen
-        name="explore"
-        options={{
-          title: 'Explore',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="paperplane.fill" color={color} />,
-        }}
-      />
-    </Tabs>
-  );
+    return (
+        <Tabs
+            screenOptions={{
+                headerShown: true,
+                tabBarButton: HapticTab,
+                tabBarStyle: {
+                    backgroundColor: retro.nav.bg,
+                    borderTopColor: retro.nav.border,
+                    borderTopWidth: 2,
+                },
+                tabBarActiveTintColor: retro.nav.accent,
+                tabBarInactiveTintColor: retro.nav.muted,
+                headerStyle: { backgroundColor: retro.nav.bg },
+                headerTintColor: retro.nav.text,
+                headerTitleStyle: {
+                    fontFamily: serif,
+                    letterSpacing: 1.5,
+                    fontSize: 18,
+                },
+            }}>
+            <Tabs.Screen
+                name="index"
+                options={{
+                    title: 'Recettes',
+                    tabBarIcon: ({ color }) => (
+                        <Ionicons name="restaurant-outline" size={26} color={color} />
+                    ),
+                }}
+            />
+            <Tabs.Screen
+                name="favorites"
+                options={{
+                    title: 'Favoris',
+                    tabBarIcon: ({ color }) => (
+                        <Ionicons name="heart" size={26} color={color} />
+                    ),
+                }}
+            />
+            <Tabs.Screen
+            name="history"
+            options={{
+                title: 'Historique',
+                tabBarIcon: ({ color }) => (
+                    <Ionicons name="time-outline" size={26} color={color} />
+                ),
+            }}
+            />
+        </Tabs>
+    );
 }
