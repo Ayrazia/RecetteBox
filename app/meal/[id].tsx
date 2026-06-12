@@ -234,7 +234,7 @@ export default function MealScreen() {
 
                             <View style={[styles.divider, { borderColor: c.border }]} />
 
-                            {/* Section Minuteur */}
+
                             <View style={{ alignItems: "center", marginVertical: 15 }}>
                                 {secondsLeft > 0 ? (
                                     <TouchableOpacity
