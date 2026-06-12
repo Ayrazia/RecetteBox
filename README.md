@@ -83,6 +83,16 @@ Cette commande déplacera le code actuel dans un dossier `app-example` et géné
 
 ---
 
+
+<p>
+  <img src="imageApplications/IMG_1499.PNG" width="220">
+    <img src="imageApplications/IMG_1500.PNG" width="220">
+      <img src="imageApplications/IMG_1501.PNG" width="220">
+        <img src="imageApplications/IMG_1502.PNG" width="220">
+          <img src="imageApplications/IMG_1503.PNG" width="220">
+            <img src="imageApplications/IMG_1504.PNG" width="220">
+              <img src="imageApplications/IMG_1505.PNG" width="220">
+</p>
 ## 🤝 Contribution
 
 Les contributions, suggestions et rapports de bugs sont les bienvenus.
