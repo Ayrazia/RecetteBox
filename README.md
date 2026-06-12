@@ -1,50 +1,93 @@
-# Welcome to your Expo app 👋
+# RecetteBox 
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+Bienvenue sur **RecetteBox**, une application mobile moderne de découverte et de gestion de recettes de cuisine, développée avec React Native et Expo. Trouvez l'inspiration pour vos prochains repas grâce à des filtres par catégorie, pays ou ingrédient, ou laissez simplement le hasard choisir pour vous !
 
-## Get started
+##  Fonctionnalités
 
-1. Install dependencies
+- **Recherche avancée** : recherchez des recettes par nom, ingrédient ou pays d'origine.
+- **Navigation par catégories** : explorez facilement les entrées, plats et desserts grâce à une interface intuitive.
+- **Recette aléatoire** : découvrez une nouvelle idée de repas en un seul clic.
+- **Favoris** : enregistrez vos recettes préférées pour les retrouver rapidement (via Redux).
+- **Historique** : consultez les dernières recettes visitées.
+- **Mode sombre & thème rétro** : une interface élégante avec une typographie serif adaptée aux préférences système.
+- **Fiches recettes complètes** : accédez à la liste des ingrédients, aux instructions détaillées, aux vidéos de préparation et à un minuteur intégré.
 
-   ```bash
-   npm install
-   ```
+---
 
-2. Start the app
+##  Technologies utilisées
 
-   ```bash
-   npx expo start
-   ```
+- **Framework** : React Native avec Expo (SDK 51+)
+- **Navigation** : Expo Router (routage basé sur les fichiers)
+- **Gestion d'état** : Redux Toolkit (slices pour les recettes, favoris et historique)
+- **UI & Icônes** : thème rétro personnalisé et `@expo/vector-icons` (Ionicons)
+- **API** : intégration avec l'API publique TheMealDB
 
-In the output, you'll find options to open the app in a
+---
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+##  Installation
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+### 1. Cloner le dépôt
 
-## Get a fresh project
+```bash
+git clone https://github.com/Ayrazia/RecetteBox.git
+cd RecetteBox
+```
 
-When you're ready, run:
+### 2. Installer les dépendances
+
+```bash
+npm install
+```
+
+### 3. Lancer l'application
+
+```bash
+npx expo start
+```
+
+Depuis Expo, vous pourrez ouvrir l'application sur :
+
+-  Expo Go (via QR Code)
+-  Un émulateur Android
+-  Un simulateur iOS
+-  Un navigateur web (touche `w`)
+
+---
+
+##  Structure du projet
+
+```plaintext
+├── app/
+│   ├── tabs/index.tsx
+│   ├── tabs/history.tsx
+│   ├── tabs/_layout.tsx
+│   ├── meal/[id].tsx
+│   ├── category/[id].tsx
+│   └── _layout.tsx
+
+├── components/
+├── constants/
+├── features/
+└── redux/
+```
+
+---
+
+##  Réinitialiser le projet
 
 ```bash
 npm run reset-project
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+Cette commande déplacera le code actuel dans un dossier `app-example` et générera un nouveau dossier `app` vide.
 
-## Learn more
+---
 
-To learn more about developing your project with Expo, look at the following resources:
+## 🤝 Contribution
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+Les contributions, suggestions et rapports de bugs sont les bienvenus.
 
-## Join the community
+---
 
-Join our community of developers creating universal apps.
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+Développé par **Ayrazia**.
