@@ -68,10 +68,6 @@ export default function MealScreen() {
         }
     }, []);
 
-    const togglePlaying = useCallback(() => {
-        setPlaying((prev) => !prev);
-    }, []);
-
     const getYoutubeId = (url?: string) => {
         if (!url || typeof url !== 'string' || !url.trim()) return "";
         const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
@@ -233,14 +229,6 @@ export default function MealScreen() {
                                         videoId={youtubeId}
                                         onChangeState={onStateChange}
                                     />
-                                    <TouchableOpacity
-                                        style={[styles.playButton, { backgroundColor: c.accent }]}
-                                        onPress={togglePlaying}
-                                    >
-                                        <Text style={styles.playButtonText}>
-                                            {playing ? "⏸ PAUSER LA VIDÉO" : "▶ LIRE LA VIDÉO"}
-                                        </Text>
-                                    </TouchableOpacity>
                                 </View>
                             )}
 

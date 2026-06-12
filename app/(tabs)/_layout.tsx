@@ -1,7 +1,6 @@
 import { Tabs } from 'expo-router';
 import React from 'react';
 import { Ionicons } from '@expo/vector-icons';
-import { HapticTab } from '@/components/haptic-tab';
 import { retro, serif } from '@/constants/retro';
 
 export default function TabLayout() {
@@ -9,7 +8,6 @@ export default function TabLayout() {
         <Tabs
             screenOptions={{
                 headerShown: true,
-                tabBarButton: HapticTab,
                 tabBarStyle: {
                     backgroundColor: retro.nav.bg,
                     borderTopColor: retro.nav.border,
