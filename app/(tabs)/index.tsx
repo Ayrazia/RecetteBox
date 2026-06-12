@@ -299,8 +299,16 @@ export default function HomeScreen() {
 const styles = StyleSheet.create({
     container: { flex: 1 },
 
-    filterBar: { borderBottomWidth: 2, maxHeight: 58 },
-    filterBarContent: { paddingHorizontal: 12, paddingVertical: 10, gap: 8 },
+    filterBar: {
+        borderBottomWidth: 2,
+        height: 54,
+        flexGrow: 0
+    },
+    filterBarContent: {
+        paddingHorizontal: 12,
+        alignItems: 'center',
+        gap: 8
+    },
     filterTab: {
         flexDirection: 'row',
         alignItems: 'center',
@@ -312,8 +320,17 @@ const styles = StyleSheet.create({
     },
     filterTabText: { fontFamily: serif, fontSize: 13, fontWeight: '700' },
 
-    chipRow: { borderBottomWidth: 1.5, minHeight: 50, justifyContent: 'center' },
-    chipRowContent: { paddingHorizontal: 12, paddingVertical: 8, gap: 8 },
+    chipRow: {
+        borderBottomWidth: 1.5,
+        height: 48,
+        flexGrow: 0,
+        justifyContent: 'center'
+    },
+    chipRowContent: {
+        paddingHorizontal: 12,
+        alignItems: 'center',
+        gap: 8
+    },
     chip: {
         paddingHorizontal: 11,
         paddingVertical: 5,
@@ -333,7 +350,6 @@ const styles = StyleSheet.create({
         gap: 8,
     },
     searchInput: { flex: 1, fontFamily: serif, fontSize: 14, padding: 0 },
-
     center: { flex: 1, justifyContent: 'center', alignItems: 'center', padding: 24 },
     list: { padding: 14 },
     hint: { fontFamily: serif, fontSize: 14, textAlign: 'center' },

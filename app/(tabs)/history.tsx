@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import { FlatList, View, ActivityIndicator, Text, StyleSheet } from 'react-native';
+import {FlatList, View, ActivityIndicator, Text, StyleSheet, Button, Pressable} from 'react-native';
 import { useRouter } from 'expo-router'; // Correction de l'import du router
 import { useAppDispatch, useAppSelector } from '@/redux/hooks';
 import { useColorScheme } from '@/hooks/use-color-scheme';
 import { retro, serif } from '@/constants/retro';
 import { MealCard } from '@/components/MealCard';
-import { addHistory } from '@/features/historySlice';
+import historySlice, {addHistory, removeAllHistory} from '@/features/historySlice';
 import { addFavorite, removeFavorite } from '@/features/favoritesSlice';
 import {Meal} from "@/interfaces/Meal";
 
@@ -74,11 +74,11 @@ export default function History() {
     }
 
     return (
-        <FlatList
-            data={results}
+        <><FlatList
+            data={results.reverse()}
             keyExtractor={item => item.idMeal}
-            contentContainerStyle={[styles.list, { backgroundColor: c.background }]}
-            renderItem={({ item }) => (
+            contentContainerStyle={[styles.list, {backgroundColor: c.background}]}
+            renderItem={({item}) => (
                 <MealCard
                     meal={item}
                     onPress={() => {
@@ -90,15 +90,17 @@ export default function History() {
                         router.push(`/meal/${item.idMeal}`);
                     }}
                     isFavorite={favorites.some(f => f.idMeal === item.idMeal)}
-                    onToggleFavorite={() => toggleFav(item)}
-                />
+                    onToggleFavorite={() => toggleFav(item)}/>
             )}
-            ListEmptyComponent={
-                <View style={styles.center}>
-                    <Text style={{ color: c.textMuted, fontFamily: serif }}>Aucun historique de recherche</Text>
-                </View>
-            }
+            ListEmptyComponent={<View style={styles.center}>
+                <Text style={{color: c.textMuted, fontFamily: serif}}>Aucun historique de recherche</Text>
+            </View>}
         />
+            <Pressable onPress={() => dispatch(removeAllHistory())} style={{padding: 12, alignItems: 'center', backgroundColor: c.surface, margin: 16, borderRadius: 8}}>
+                <Text style={{color: c.accent, fontFamily: serif}}>Effacer l&#39;historique</Text>
+
+            </Pressable>
+        </>
     );
 }
 

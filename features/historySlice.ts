@@ -23,13 +23,13 @@ const historySlice = createSlice({
             const exists = state.items.some(m => m.idRecipes === action.payload.idRecipes);
             if (!exists) state.items.push(action.payload);
         },
-        removeHistory(state, action: PayloadAction<HistoryRecipes>) {
-            state.items = state.items.filter(m => m.idRecipes !== action.payload.idRecipes);
+        removeAllHistory(state) {
+            state.items = [];
         }
 
     },
 })
 
-export const {addHistory, removeHistory} = historySlice.actions;
+export const {addHistory, removeAllHistory} = historySlice.actions;
 
 export default historySlice.reducer;
